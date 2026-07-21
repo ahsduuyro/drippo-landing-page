@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-drippo-lime: #b0ff00;
+  --color-drippo-lime-dark: #77c800;
+  --color-drippo-cta: #111111;
+  --color-drippo-black: #0c0c0c;
+  --color-drippo-ink: #666666;
+  --color-drippo-muted: #666666;
+  --color-drippo-fog: #f8f9fa;
+  --color-drippo-card: #f4f7f9;
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --radius-pill: 9999px;
+  --radius-card: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html.nav-open,
+  html.nav-open body {
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply m-0 min-w-0 bg-white font-sans text-drippo-ink antialiased;
+  }
+
+  img {
+    @apply h-auto max-w-full;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  @keyframes promo-marquee-once {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-promo-marquee-once {
+    animation: promo-marquee-once 45s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-promo-marquee-once {
+      animation: none;
+      transform: none;
+      margin-inline: auto;
+      width: 100%;
+      text-align: center;
+      white-space: normal;
+    }
+  }
+
+  .stats-outline-heading {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--color-drippo-lime);
+    paint-order: stroke fill;
+  }
+
+  .stories-stroke-heading {
+    color: var(--color-drippo-black);
+    -webkit-text-stroke: 1.5px var(--color-drippo-lime);
+    paint-order: stroke fill;
+  }
+
+  .hero-stroke-heading {
+    color: #ffffff;
+    -webkit-text-stroke: 1.5px var(--color-drippo-lime);
+    paint-order: stroke fill;
+  }
+
+  @supports not (-webkit-text-stroke: 1.5px #b0ff00) {
+    .stats-outline-heading {
+      color: var(--color-drippo-lime);
+    }
+  }
+
+  .stats-card {
+    background-color: var(--color-drippo-card);
+    background-image: radial-gradient(
+      circle,
+      rgba(12, 12, 12, 0.08) 1px,
+      transparent 1px
+    );
+    background-size: 14px 14px;
+  }
+}
