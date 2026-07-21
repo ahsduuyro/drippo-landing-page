@@ -12,9 +12,14 @@ Marketing landing page for Drippo (Fashion in minutes).
 
 ## Deploy
 
-GitHub Pages: https://dkaxaytech.github.io/drippo-landing-page/
+Live: https://dkaxaytech.github.io/drippo-landing-page/
 
-Pushes to `main` build and deploy automatically via GitHub Actions.
+Pushes to `main` build and publish to the `gh-pages` branch.
+
+One-time GitHub setting (if the site is blank):
+1. Repo → **Settings** → **Pages**
+2. **Source**: Deploy from a branch
+3. Branch: `gh-pages` / `/ (root)` → Save
 
 ## Run
 
