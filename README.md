@@ -10,6 +10,12 @@ Marketing landing page for Drippo (Fashion in minutes).
 - Framer Motion
 - Lucide (fallback icons only)
 
+## Deploy
+
+GitHub Pages: https://dkaxaytech.github.io/drippo-landing-page/
+
+Pushes to `main` build and deploy automatically via GitHub Actions.
+
 ## Run
 
 ```bash

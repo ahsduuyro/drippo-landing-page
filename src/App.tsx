@@ -4,7 +4,7 @@ import { LandingPage } from '@/pages/LandingPage'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/drippo-landing-page">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
